@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground & Coach Booking | Maharaja Cricket Club</title>
+    <link rel="shortcut icon" href="./src/img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="booking.css">
+</head>
+
+<body>
+    <!-- Background Video & Overlay -->
+    <video class="bg-video" muted loop autoplay playsinline src="./src/backgroundVideo.mp4"></video>
+    <div class="bg-overlay"></div>
+
+    <!-- Shared Navigation Bar -->
+    <div id="nav">
+        <div class="nav-left">
+            <a href="index.html">
+                <img class="logo-img" src="./src/img/logo.png" alt="Maharaja Cricket Club Logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <h4><a href="index.html">HOME</a></h4>
+            <h4><a href="join.html">MEMBERSHIP</a></h4>
+            <h4><a href="booking.html" class="active">BOOKING</a></h4>
+            <h4><a href="tutorials.html">TUTORIALS</a></h4>
+            <h4><a href="virtual-tour.html">VIRTUAL TOUR</a></h4>
+            <h4><a href="rewards.html">REWARDS</a></h4>
+        </div>
+        <div class="nav-actions">
+            <h4 class="sign-in"><a href="sign.html">SIGN IN</a></h4>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="booking-page-container">
+        <!-- Hero Section -->
+        <header class="booking-hero">
+            <div class="tag-badge">🏆 World-Class Cricket Infrastructure</div>
+            <h1>RESERVE YOUR ARENA & <br><span class="highlight">TRAIN WITH THE BEST</span></h1>
+            <p>Select match-ready turf grounds, practice nets, or book private 1-on-1 coaching sessions with MCC certified master trainers.</p>
+        </header>
+
+        <!-- Tab Controls -->
+        <div class="booking-tabs">
+            <button class="tab-btn active" data-tab="groundTab">
+                <span>🏟️</span> Book Playground Slot
+            </button>
+            <button class="tab-btn" data-tab="coachTab">
+                <span>🧢</span> Book 1-on-1 Coach
+            </button>
+        </div>
+
+        <!-- Booking Card Container -->
+        <div class="booking-card">
+            <!-- Tab 1: Playground Booking -->
+            <div class="tab-content active" id="groundTab">
+                <form id="groundBookingForm">
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="groundArea">🏟️ Select Ground Area / Facility</label>
+                            <select id="groundArea" required>
+                                <option value="Main International Match Pitch">Main International Match Pitch (Turf Wicket)</option>
+                                <option value="Practice Turf Nets (Lane 1-4)">Practice Turf Nets (Lane 1-4 with Bowling Machine)</option>
+                                <option value="Indoor High-Performance Arena">Indoor High-Performance Arena (Floodlit)</option>
+                                <option value="Centenary Pavilion Oval">Centenary Pavilion Oval (Full Match Simulation)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="groundDate">📅 Reservation Date</label>
+                            <input type="date" id="groundDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="groundTimeSlot">⏰ Time Slot (1-Hour Block)</label>
+                            <select id="groundTimeSlot" required>
+                                <!-- Populated dynamically by booking.js -->
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="groundPlayers">👥 Number of Players</label>
+                            <input type="number" id="groundPlayers" min="1" max="30" value="11" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="groundName">👤 Organizer / Team Name</label>
+                            <input type="text" id="groundName" placeholder="e.g. Royal Strikers / Rahul Verma" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="groundEmail">📧 Email Address</label>
+                            <input type="email" id="groundEmail" placeholder="yourname@domain.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="groundPhone">📱 Phone Number</label>
+                            <input type="tel" id="groundPhone" placeholder="+91 98765 43210" required>
+                        </div>
+                    </div>
+
+                    <div class="bonus-pill">
+                        <span>⭐</span>
+                        <span>Booking rewards: Earn <strong>+10 Loyalty Bonus Points</strong> instantly!</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span>Confirm Ground Reservation</span>
+                        <span>➔</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Tab 2: Coach Booking -->
+            <div class="tab-content" id="coachTab">
+                <form id="coachBookingForm">
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="coachSelect">🧢 Select Certified Coach & Specialty</label>
+                            <select id="coachSelect" required>
+                                <option value="Rajesh Sharma">Coach Rajesh Sharma — Batting Masterclass & Power Hitting</option>
+                                <option value="Vikram Rathore">Coach Vikram Rathore — Fast Pace & Spin Bowling Tactics</option>
+                                <option value="Amit Patel">Coach Amit Patel — Wicketkeeping & High-Agility Fielding</option>
+                                <option value="David Miller">Coach David Miller — Match Strategy & High-Pressure Mindset</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="coachDate">📅 Coaching Date</label>
+                            <input type="date" id="coachDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="coachTimeSlot">⏰ Available Slot (1-Hour Session)</label>
+                            <select id="coachTimeSlot" required>
+                                <!-- Populated dynamically by booking.js -->
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="coachSkillLevel">🎯 Trainee Skill Level</label>
+                            <select id="coachSkillLevel" required>
+                                <option value="Beginner (Foundations & Stance)">Beginner (Foundations & Stance)</option>
+                                <option value="Intermediate (Club Level)">Intermediate (Club Level)</option>
+                                <option value="Advanced / Professional">Advanced / Professional</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="coachName">👤 Trainee Name</label>
+                            <input type="text" id="coachName" placeholder="Trainee's full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="coachEmail">📧 Email Address</label>
+                            <input type="email" id="coachEmail" placeholder="yourname@domain.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="coachPhone">📱 Phone Number</label>
+                            <input type="tel" id="coachPhone" placeholder="+91 98765 43210" required>
+                        </div>
+                    </div>
+
+                    <div class="bonus-pill">
+                        <span>⭐</span>
+                        <span>Booking rewards: Earn <strong>+10 Loyalty Bonus Points</strong> instantly!</span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span>Book Coaching Session</span>
+                        <span>➔</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- My Bookings Section -->
+        <section class="my-bookings-section">
+            <div class="section-header">
+                <h2><span>📋</span> My <span class="highlight">Bookings</span></h2>
+                <div class="bookings-count" id="bookingsCount">0 Active</div>
+            </div>
+
+            <div class="bookings-grid" id="bookingsGrid">
+                <!-- Populated dynamically by booking.js -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="shared-footer">
+        <div class="footer-inner">
+            <div class="footer-col brand-col">
+                <img src="./src/img/logo.png" alt="Logo" class="footer-logo">
+                <p>THE 22 YARDS — Premier Cricket Facility in Jaipur, Rajasthan. Passionate about technology, player development, and making cricket fun and accessible to everyone.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="join.html">Membership</a></li>
+                    <li><a href="booking.html">Ground & Coach Booking</a></li>
+                    <li><a href="tutorials.html">Video Tutorials</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="virtual-tour.html">360° Virtual Tour</a></li>
+                    <li><a href="rewards.html">Loyalty Rewards</a></li>
+                    <li><a href="registration.html">Join Club Now</a></li>
+                    <li><a href="sign.html">Member Sign In</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Club</h4>
+                <p>Rambagh Palace Grounds,<br>Bhawani Singh Road, C-Scheme,<br>Jaipur, Rajasthan 302005, India</p>
+                <p style="margin-top: 0.5rem; color: #FEB92F;">TEL: 0208 309 0181</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 THE 22 YARDS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Confirmation / Alert Modal -->
+    <div class="modal-backdrop" id="bookingModal">
+        <div class="modal-content" id="modalContentContainer">
+            <!-- Injected dynamically by booking.js -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="./booking.js"></script>
+</body>
+
+</html>

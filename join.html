@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Now</title>
+  <link rel="shortcut icon" href="./src/img/favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="join.css">
+  <link rel="stylesheet" href="trial.css">
+</head>
+
+<body>
+  <!-- <video muted loop autoplay src="./src/backgroundVideo.mp4"></video> -->
+  <div id="nav">
+    <a href="./index.html">
+      <img class="logo-img" src="./src/img/logo.png" alt="Logo">
+    </a>
+    <h4><a href="index.html">HOME</a></h4>
+    <h4><a href="join.html" class="active">MEMBERSHIP</a></h4>
+    <h4><a href="booking.html">BOOKING</a></h4>
+    <h4><a href="tutorials.html">TUTORIALS</a></h4>
+    <h4><a href="virtual-tour.html">VIRTUAL.TOUR</a></h4>
+    <h4><a href="rewards.html">REWARDS</a></h4>
+    <h4 class="sign-in"><a href="sign.html">SIGN.IN</a></h4>
+  </div>
+
+
+  <div id="starttxt">
+    <header class="hero-section">
+      <h1>Join Our Cricket Family Today!<br> <span class="highlight">Unleash</span> Your Passion for Cricket!</h1>
+      <p>Step onto the pitch and be part of a thriving community of cricket lovers.<br> Whether you're a player, fan, or
+        volunteer, we have a place for you!</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+        <button class="cta-button"><a href="./registration.html">JOIN NOW</a></button>
+        <button class="btn-trial-cta btn-start-trial">🏏 Start 3-Day Free Trial</button>
+      </div>
+    </header>
+
+    <section class="partner-section">
+      <h2>Affordable Membership Plans for Every Cricket Enthusiast</h2>
+      <p>Whether you’re an aspiring cricketer, a seasoned player, or just love the game, we have a plan for you!</p>
+    </section>
+  </div>
+
+  <div id="discountBannerContainer" class="discount-banner-container"></div>
+
+
+  <div class="pricing-container">
+    <!-- Basic Plan -->
+    <div class="pricing-plan">
+      <!-- <div class="icon">🛴</div> -->
+      <h3>Junior Membership</h3>
+      <p>(For ages 6-18)</p>
+      <ul>
+        <li>Weekly coaching sessions with Trainers </li>
+        <li>Access to junior tournaments</li>
+        <li>Use of practice facilities</li>
+        <li>Club jersey and welcome kit</li>
+      </ul>
+      <div class="price" id="priceJunior">₹400 <small>/ month</small></div>
+      <button><a href="./registration.html">Pay monthly</a></button>
+    </div>
+
+    <!-- Standard Plan -->
+    <div class="pricing-plan most-popular">
+      <!-- <div class="icon">🛵</div> -->
+      <h3>Adult Membership</h3>
+      <p>(For ages 18+)</p>
+      <ul>
+        <li>Access to competitive leagues and tournaments</li>
+        <li>Advanced training sessions</li>
+        <li>Full use of club facilities (nets, gym, etc.)</li>
+        <li>Invitations to social and networking events</li>
+      </ul>
+      <div class="price" id="priceAdult">₹800 <small>/ month</small></div>
+      <button><a href="./registration.html">Pay monthly</a></button>
+    </div>
+
+    <!-- Premium Plan -->
+    <div class="pricing-plan">
+      <!-- <div class="icon">🏍️</div> -->
+      <h3>Supporter Membership</h3>
+      <p>(For non-players)</p>
+      <ul>
+        <li>Access to all club events and matches</li>
+        <li>Exclusive supporter merchandise</li>
+        <li>Opportunities to volunteer and support club activities</li>
+      </ul>
+      <div class="price" id="priceSupporter">₹300 <small>/ month</small></div>
+      <button><a href="./registration.html">Pay monthly</a></button>
+    </div>
+  </div>
+
+
+
+  <div class="container1">
+    <div id="container1_txt">
+      <h1>Why Join</h1>
+      <h1 class="highlight"> THE 22 YARDS?</h1>
+      <h1> Discover the Difference!</h1>
+      <p>Transform your cricket journey with unparalleled opportunities and unmatched benefits</p>
+    </div><br>
+    <div class="content">
+      <!-- Features Section -->
+      <div class="features">
+        <div class="feature-item">
+          <img src="./src/img/wallet-money.svg" alt="Low-cost fees">
+          <h3>Exclusive Member Perks</h3>
+          <p>Unlock discounts on cricket gear, access to workshops, and free passes to premium cricket events</p>
+        </div>
+        <div class="feature-item">
+          <img src="./src/img/scheduled-payouts.svg" alt="Payment Processing">
+          <h3>Pathway to Professional Cricket</h3>
+          <p>Get noticed by top selectors and scouts through our talent development programs and partnerships with
+            professional teams
+
+          </p>
+        </div>
+        <div class="feature-item">
+          <img src="./src/img/payment-marketplace.svg" alt="Scheduled Payouts">
+          <h3>Community & Networking</h3>
+          <p>Become part of a passionate cricket community where you can meet like-minded players and make lifelong
+            connections</p>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="image-section">
+        <img src="./src/img/club.jpg" alt="Payout Schedule Example">
+      </div>
+    </div>
+  </div>
+  <div id="signup_txt"><button class="cta-button"><a href="./registration.html">SIGN UP</a></button></div>
+
+
+  <div class="faq-section">
+    <!-- <h1>Ask Kotak811</h1> -->
+    <br>
+    <h2>Frequently Asked Questions</h2>
+    <br>
+    <div class="faq-item">
+      <button onclick="toggleAnswer(this)">1. Can I upgrade my membership later?</button>
+      <p class="answer">Yes! You can easily upgrade to a different plan at any time.</p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleAnswer(this)">2. Do I need prior cricket experience to join?</button>
+      <p class="answer">Not at all! We welcome players of all levels, from beginners to seasoned professionals.</p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleAnswer(this)">3. Is there a trial period?</button>
+      <p class="answer">Yes, you can join one-week trial session before committing to a full membership.</p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleAnswer(this)">4. What is the duration of each training session?</button>
+      <p class="answer">Training sessions typically last 1.5 to 2 hours depending on your age group and skill level.
+        However, we also offer flexible training schedules to suit your availability.</p>
+    </div>
+    <div class="faq-item">
+      <button onclick="toggleAnswer(this)">5. How do I get in touch with my coach or team captain?</button>
+      <p class="answer">Once you're a member, you'll have access to our member portal, where you can directly message
+        your coach or team captain. You can also communicate by contacting the club directly.</p>
+    </div>
+  </div>
+  <hr>
+
+
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-content">
+        <!-- About Section -->
+        <div class="footer-about">
+          <h3>About Us</h3>
+          <p>
+            Welcome to THE 22 YARDS, a place where passion meets
+            professionalism. Join us to hone your skills, participate in
+            exciting matches, and be part of a vibrant cricketing community.
+          </p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./booking.html">Booking</a></li>
+            <li><a href="./tutorials.html">Tutorials</a></li>
+            <li><a href="./virtual-tour.html">Virtual Tour</a></li>
+            <li><a href="./rewards.html">Rewards</a></li>
+            <li><a href="./sign.html">Login</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p><strong>Email:</strong> info@yourcricketclub.com</p>
+          <p><strong>Phone:</strong> +123 456 7890</p>
+          <p><strong>Address:</strong> Rambagh Palace Grounds,<br>
+            Bhawani Singh Road,<br>
+            C-Scheme, Jaipur,<br>
+            Rajasthan 302005, India<br></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 THE 22 YARDS. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./trial.js"></script>
+  <script>
+    function toggleAnswer(button) {
+      const answer = button.nextElementSibling;
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+      } else {
+        answer.style.display = "block";
+      }
+    }
+
+    // Feature 4: Apply Loyalty Bonus Points discount to membership plans
+    function checkRewardDiscount() {
+      const bannerContainer = document.getElementById('discountBannerContainer');
+      const discountRaw = localStorage.getItem('mcc_active_discount');
+      if (!discountRaw || !bannerContainer) return;
+
+      try {
+        const discount = JSON.parse(discountRaw);
+        if (!discount.active || discount.type !== 'membership') return;
+
+        bannerContainer.innerHTML = `
+          <div class="reward-discount-banner">
+            <div class="discount-text">
+              <span>🎉</span>
+              <span><strong>Loyalty Reward Applied:</strong> ₹${discount.amount} discount credit applied to your membership plan!</span>
+              <span class="discount-code-badge">${discount.code}</span>
+            </div>
+            <button class="btn-remove-discount" onclick="removeRewardDiscount()">Remove Voucher</button>
+          </div>
+        `;
+
+        const plans = [
+          { id: 'priceJunior', orig: 400 },
+          { id: 'priceAdult', orig: 800 },
+          { id: 'priceSupporter', orig: 300 }
+        ];
+
+        plans.forEach(p => {
+          const el = document.getElementById(p.id);
+          if (el) {
+            const discounted = Math.max(0, p.orig - discount.amount);
+            el.innerHTML = `
+              <span class="discount-applied-pill">BONUS POINTS APPLIED (-₹${discount.amount})</span><br>
+              <del style="opacity: 0.6; font-size: 1rem; margin-right: 6px;">₹${p.orig}</del>
+              <strong style="color: #4ade80;">₹${discounted}</strong> <small>/ month</small>
+            `;
+          }
+        });
+      } catch (e) {
+        console.error('Error applying discount', e);
+      }
+    }
+
+    window.removeRewardDiscount = function() {
+      localStorage.removeItem('mcc_active_discount');
+      window.location.reload();
+    };
+
+    document.addEventListener('DOMContentLoaded', checkRewardDiscount);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="shortcut icon" href="./src/img/favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="sign.css">
+</head>
+
+<body>
+  <div id="nav">
+    <a href="./index.html">
+      <img class="logo-img" src="./src/img/logo.png" alt="Logo">
+    </a>
+    <h4><a href="index.html">HOME</a></h4>
+    <h4><a href="join.html">MEMBERSHIP</a></h4>
+    <h4><a href="booking.html">BOOKING</a></h4>
+    <h4><a href="tutorials.html">TUTORIALS</a></h4>
+    <h4><a href="virtual-tour.html">VIRTUAL TOUR</a></h4>
+    <h4><a href="rewards.html">REWARDS</a></h4>
+    <h4><a href="./registration.html">SIGN UP</a></h4>
+  </div>
+
+  <div class="login-container">
+    <form class="login-form">
+      <h2>Welcome back</h2>
+      <p>Please enter your details</p>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" id="email" placeholder="Email address" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Password" required>
+      </div>
+      <div class="options">
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+      <button type="submit" class="btn-primary">Sign In</button>
+      <p>Don’t have an account? <a href="registration.html">Sign up</a></p>
+    </form>
+  </div>
+</body>
+
+</html>

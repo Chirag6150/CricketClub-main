@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Membership Registration</title>
+    <link rel="shortcut icon" href="./src/img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: montserrat;
+        }
+
+        body,
+        html {
+            height: 100%;
+            overflow-x: hidden
+        }
+
+        body::-webkit-scrollbar {
+            display: block;
+            width: .5vw;
+            background: #fff
+        }
+
+        #nav {
+            display: flex;
+            z-index: 100;
+            height: 12vh;
+            gap: clamp(0.5rem, 1.4vw, 1.8rem);
+            padding: 0 clamp(1rem, 3vw, 4rem);
+            justify-items: flex-start;
+            align-items: center;
+            transition: .1s linear;
+            position: sticky;
+            top: 0%;
+            background-color: #ffffff05;
+            backdrop-filter: blur(5px);
+        }
+
+        #nav a {
+            text-decoration: none;
+        }
+
+        #nav .sign-in {
+            margin-left: auto;
+            background-color: #faa700;
+            padding: 10px 1px;
+            border-radius: 5px;
+        }
+
+
+        #nav .sign-in a:hover {
+            background-color: #d2691e;
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+        }
+
+        #nav h4 a {
+            text-decoration: none;
+            color: #000;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        #nav h4 a:hover {
+            background-color: #edecec;
+        }
+
+        #nav a:visited {
+            color: #000;
+        }
+
+        #nav h4 {
+            font-size: 95%;
+            font-weight: 500;
+            transition: .2s linear;
+        }
+
+        #nav h4:hover {
+            color: var(--hov);
+            text-shadow: 2px 2px 6px #000;
+        }
+
+        .logo-img {
+            height: 8vh;
+        }
+
+        .logo-img:hover {
+            scale: 1.1;
+            transition: all ease-in .3s;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        select,
+        textarea {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .checkbox-container input,
+        .radio-container input {
+            width: 20px;
+            height: 13px;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .section h3 {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ff6200;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: #e55900;
+        }
+
+        .note {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            text-align: center;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .single-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .single-line .form-group {
+            flex: 1;
+        }
+
+        .single-line label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="nav">
+        <a href="./index.html">
+            <img class="logo-img" src="./src/img/logo.png" alt="Logo">
+        </a>
+        <h4><a href="index.html">HOME</a></h4>
+        <h4><a href="join.html">MEMBERSHIP</a></h4>
+        <h4><a href="booking.html">BOOKING</a></h4>
+        <h4><a href="tutorials.html">TUTORIALS</a></h4>
+        <h4><a href="virtual-tour.html">VIRTUAL TOUR</a></h4>
+        <h4><a href="rewards.html">REWARDS</a></h4>
+        <h4 class="sign-in"><a href="sign.html">SIGN IN</a></h4>
+    </div>
+
+    <div class="container">
+        <h1>Club Membership Registration</h1>
+        <p>Complete the form below to sign up for our membership service.</p>
+        <form action="#" method="post">
+
+            <!-- <div class="form-group"> -->
+            <h3>Account Details</h3>
+            <div class="form-group">
+                <label for="user-id">Create Your User ID</label>
+                <input type="text" id="user-id" name="user-id" placeholder="Enter a unique User ID" minlength="4"
+                    maxlength="20" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Create Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" minlength="6"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password"
+                    placeholder="Re-enter your password" minlength="6" required>
+            </div>
+            <!-- </div> -->
+
+
+
+
+            <!-- Name Section -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone-number">Phone Number</label>
+                    <input type="tel" id="phone-number" name="phone-number" required>
+                </div>
+            </div>
+
+            <!-- Address Section -->
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Street Address Line 1" required>
+                <input type="text" name="address2" placeholder="Street Address Line 2" style="margin-top: 10px;">
+                <div class="form-row" style="margin-top: 10px;">
+                    <input type="text" name="city" placeholder="City">
+                    <input type="text" name="state" placeholder="State/Province">
+                    <input type="text" name="zip" placeholder="Postal/Zip Code">
+                </div>
+            </div>
+
+            <!-- Birth Date -->
+            <div id="birthDate">
+                <div class="form-row single-line">
+                    <div class="form-group">
+                        <label for="month">Month</label>
+                        <select name="month" id="month" required>
+                            <option value="" disabled selected>Month</option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="day">Day</label>
+                        <select name="day" id="day" required>
+                            <option value="">Day</option>
+                            <!-- Days 1-31 -->
+                            <script>
+                                for (let i = 1; i <= 31; i++) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <select name="year" id="year" required>
+                            <script>
+                                const currentYear = new Date().getFullYear();
+                                for (let i = currentYear; i >= 1900; i--) {
+                                    document.write(`<option value="${i}">${i}</option>`);
+                                }
+                            </script>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Other Questions -->
+            <div class="form-group">
+                <label>Where did you hear about us?</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="referral" value="Friend"> A friend or colleague</label>
+                    <label><input type="checkbox" name="referral" value="Google"> Google</label>
+                    <label><input type="checkbox" name="referral" value="Blog Post">Blog Post</label>
+                    <label><input type="checkbox" name="referral" value="News Article">News Article</label>
+                    <label><input type="checkbox" name="referral" value="Other">Other</label>
+                </div>
+            </div>
+
+            <!-- Membership Type -->
+            <div class="form-group">
+                <label>Membership Type</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="membership" value="Junior">Junior Membership</label>
+                    <label><input type="radio" name="membership" value="Senior">Adult Membership</label>
+                    <label><input type="radio" name="membership" value="Supporter">Supporter</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Preferred way to contact</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="membership" value="Email">Email</label>
+                    <label><input type="radio" name="membership" value="Phone">Phone</label>
+                    <label><input type="radio" name="membership" value="Any">Any</label>
+                </div>
+            </div>
+
+            <!-- Rules and Privacy -->
+            <div class="section">
+                <hr>
+                <h3>Membership Rules</h3>
+                <ul>
+                    <li>Membership is available to anyone 6 years of age or older.</li>
+                    <li>You must provide accurate and truthful information during registration.</li>
+                    <li>You promise NOT to use the membership for fraudulent activities or to maintain more than one
+                        account.</li>
+                </ul>
+                <div class="checkbox-container">
+                    <label><input type="checkbox" name="rules" required> I have read and accepted the rules.</label>
+                </div>
+            </div>
+
+
+
+            <div class="section">
+                <hr>
+                <h1>Privacy Policy</h1>
+                <p>Please reach out and read our Privacy Policy in order to understand how your information is used and
+                    shared, and check below if you accept the policy.</p>
+                <br>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="privacy-policy" required>
+                    <label for="privacy-policy">I have read, understood, and accepted the PRIVACY POLICY for
+                        membership.</label>
+                </div>
+                <br>
+                <div class="note">
+                    <p>Once you submit your application, check your email for email validation!.</p>
+                    <p><strong>Thank you!</strong></p>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="button">Submit Application</button>
+        </form>
+    </div>
+
+
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function (event) {
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+
+            if (password !== confirmPassword) {
+                event.preventDefault(); // Prevent form submission
+                alert("Passwords do not match. Please try again.");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

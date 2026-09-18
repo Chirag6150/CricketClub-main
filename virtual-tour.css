@@ -1,0 +1,630 @@
+/* =========================================================
+   MAHARAJA CRICKET CLUB - VIRTUAL TOUR STYLES (virtual-tour.css)
+   ========================================================= */
+
+:root {
+    --acc: #FEB92F;
+    --acc-hover: #faa700;
+    --bg-dark: #0c0d10;
+    --bg-card: rgba(22, 24, 30, 0.88);
+    --border-gold: rgba(254, 185, 47, 0.3);
+    --text-light: #f5f5f5;
+    --text-muted: #a0a5b5;
+    --live-red: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-light);
+}
+
+body, html {
+    min-height: 100%;
+    background-color: var(--bg-dark);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    background: #111;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--acc);
+    border-radius: 4px;
+}
+
+/* ---------------------------------------------------------
+   NAVIGATION BAR (Shared MCC Layout)
+   --------------------------------------------------------- */
+#nav {
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 14vh;
+    min-height: 75px;
+    padding: 0 clamp(1.5rem, 4vw, 5rem);
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(12, 13, 16, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 8.5vh;
+    min-height: 50px;
+    max-height: 70px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.75rem, 1.8vw, 2.2rem);
+    flex-wrap: wrap;
+}
+
+.nav-links h4 {
+    font-size: clamp(0.78rem, 1vw, 0.95rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+}
+
+.nav-links h4 a {
+    text-decoration: none;
+    color: #e0e0e0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.25s ease;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.nav-links h4 a:hover,
+.nav-links h4 a.active {
+    color: var(--acc);
+    text-shadow: 0 0 10px rgba(254, 185, 47, 0.5);
+    background: rgba(254, 185, 47, 0.08);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-actions .sign-in a {
+    text-decoration: none;
+    background-color: var(--acc-hover);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 9px 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(250, 167, 0, 0.35);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-actions .sign-in a:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* ---------------------------------------------------------
+   PAGE CONTAINER & HERO
+   --------------------------------------------------------- */
+.tour-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+}
+
+.tour-hero {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.tag-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(254, 185, 47, 0.15);
+    border: 1px solid var(--border-gold);
+    color: var(--acc);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+}
+
+.tour-hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.tour-hero h1 .highlight {
+    color: var(--acc);
+    text-shadow: 0 0 25px rgba(254, 185, 47, 0.4);
+}
+
+.tour-hero p {
+    color: var(--text-muted);
+    font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ---------------------------------------------------------
+   PART 1: 360° PANORAMIC VIEWER
+   --------------------------------------------------------- */
+.tour-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    margin-bottom: 4.5rem;
+}
+
+.tour-card-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tour-card-header h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.scene-selector {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.btn-scene {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #cbd5e1;
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-scene:hover {
+    color: #fff;
+    border-color: var(--acc);
+}
+
+.btn-scene.active {
+    background: var(--acc);
+    color: #0c0d10;
+    border-color: var(--acc);
+    box-shadow: 0 4px 15px rgba(254, 185, 47, 0.35);
+}
+
+.panorama-viewport {
+    position: relative;
+    height: 520px;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+    cursor: grab;
+    user-select: none;
+}
+
+.panorama-viewport:active {
+    cursor: grabbing;
+}
+
+.panorama-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 360 Overlay Controls */
+.viewer-controls {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 0.6rem;
+    z-index: 10;
+}
+
+.ctrl-btn {
+    background: rgba(12, 14, 18, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: all 0.2s ease;
+}
+
+.ctrl-btn:hover {
+    background: var(--acc);
+    color: #000;
+    border-color: var(--acc);
+}
+
+.viewer-hint {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.compass-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid var(--border-gold);
+    color: var(--acc);
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    z-index: 10;
+}
+
+/* ---------------------------------------------------------
+   PART 2: "LIVE NOW" GROUND CAM
+   --------------------------------------------------------- */
+.live-stream-section {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.live-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.live-title-box {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.live-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid var(--live-red);
+    color: #fca5a5;
+    padding: 0.35rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.live-indicator::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--live-red);
+    box-shadow: 0 0 10px var(--live-red);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.camera-angles {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-cam {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #cbd5e1;
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cam:hover {
+    color: #fff;
+    border-color: var(--acc);
+}
+
+.btn-cam.active {
+    background: rgba(254, 185, 47, 0.2);
+    border-color: var(--acc);
+    color: var(--acc);
+}
+
+.video-player-frame {
+    position: relative;
+    width: 100%;
+    background: #000;
+    aspect-ratio: 16 / 9;
+    max-height: 580px;
+    overflow: hidden;
+}
+
+.video-player-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.live-watermark {
+    position: absolute;
+    top: 1.2rem;
+    left: 1.5rem;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(5px);
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--live-red);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.live-stats-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    padding: 1.5rem 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    z-index: 5;
+}
+
+.stream-meta-item strong {
+    color: #fff;
+}
+
+/* Custom Stream URL Tester */
+.stream-config-card {
+    padding: 1.8rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.stream-config-header {
+    margin-bottom: 0.8rem;
+}
+
+.stream-config-header h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #cbd5e1;
+    margin-bottom: 0.3rem;
+}
+
+.stream-config-header p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.stream-input-group {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.stream-input-group input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.stream-input-group input:focus {
+    border-color: var(--acc);
+}
+
+.btn-load-stream {
+    background: linear-gradient(135deg, #FEB92F, #faa700);
+    border: none;
+    color: #0c0d10;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 0 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.btn-load-stream:hover {
+    background: #fff;
+}
+
+@media (max-width: 900px) {
+    #nav {
+        padding: 0 1.2rem;
+        height: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 0.5rem 1rem;
+    }
+
+    .panorama-viewport {
+        height: 380px;
+    }
+
+    .stream-input-group {
+        flex-direction: column;
+    }
+
+    .btn-load-stream {
+        padding: 0.8rem;
+    }
+}
+
+/* ---------------------------------------------------------
+   SHARED FOOTER STYLES
+   --------------------------------------------------------- */
+.shared-footer {
+    background: #08090c;
+    border-top: 1px solid rgba(254, 185, 47, 0.2);
+    padding: 4rem 1.5rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.footer-col p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.footer-col h4 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--acc);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.2rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer-col ul a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 0.88rem;
+    transition: color 0.2s ease;
+}
+
+.footer-col ul a:hover {
+    color: var(--acc);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1.5rem;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.82rem;
+}
+
+@media (max-width: 900px) {
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

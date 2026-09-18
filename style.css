@@ -1,0 +1,590 @@
+body{
+    scroll-behavior: smooth;
+}
+
+#nav,
+#page1 {
+    display: flex
+}
+
+#nav,
+video {
+    position: fixed;
+    width: 100%
+}
+
+a{
+    text-decoration: none;
+}
+
+#about,
+#nav,
+#page2,
+body,
+html,
+video {
+    width: 100%
+}
+
+#abtImg1:hover,
+#abtImg2:hover {
+    height: 13.125rem;
+    width: 14.375rem
+}
+
+.abtImg,
+.card {
+    background-size: cover;
+    background-position: center;
+    z-index: 2
+}
+
+#f2 h3,
+#scroller,
+#scroller-in,
+.overlay h4 {
+    white-space: nowrap
+}
+
+#page1 p,
+#signUpDiv h4 {
+    width: 45%;
+    text-align: center
+}
+
+#f2 h3,
+#nav h4,
+#signUpDiv h4,
+.overlay h4 {
+    text-transform: uppercase
+}
+
+#abtText,
+#page1 p,
+#page3>p,
+#page4 h1,
+#signUpDiv h4,
+.overlay p {
+    text-align: center
+}
+
+#page1 h1,
+#page3>p,
+#page4 h1,
+#scroller-in h4 a{
+    font-family: Arial
+}
+
+#page4 h1,
+#scroller-in h4,
+.logo-img {
+    transition: .5s ease-out
+}
+
+#abtText h3,
+#f4 h4,
+#page1,
+#signUpDiv h4 {
+    cursor: default
+}
+
+#f1,
+#f2,
+#f3,
+#f4,
+#nav h4,
+.card,
+.logo-img,
+span {
+    cursor: pointer
+}
+
+:root {
+    --acc: #FEB92F;
+    --hov: bisque
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #fff
+}
+
+::selection {
+    background-color: #faebd7;
+    color: #faa700
+}
+
+body,
+html {
+    height: 100%;
+    overflow-x: hidden
+}
+
+body::-webkit-scrollbar {
+    display: block;
+    width: .5vw;
+    background: #fff
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #d2691e;
+    border-radius: .2vw
+}
+
+video {
+    z-index: -1;
+    object-fit: cover;
+    height: 100%
+}
+
+.logo-img {
+    height: 10vh
+}
+
+.logo-img:hover {
+    height: 11vh;
+}
+
+#page1 h2,
+#page1 p,
+#signUpDiv,
+#signUpDiv h4,
+.abtImg {
+    transition: .3s ease-out
+}
+
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, .4)
+}
+
+#nav {
+    z-index: 100;
+    height: 14vh;
+    min-height: 70px;
+    gap: clamp(0.6rem, 1.6vw, 2rem);
+    padding: 0 clamp(1.5rem, 4vw, 5rem);
+    justify-content: flex-start;
+    align-items: center;
+    transition: .1s linear;
+}
+
+#nav a {
+    text-decoration: none;
+}
+
+#nav a.active {
+    color: var(--acc);
+    font-weight: 700;
+}
+
+#nav .sign-in {
+    margin-left: auto;
+    padding: 10px 10px;
+    border-radius: 8px;
+    text-shadow: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all ease-out .5s;
+    text-shadow: 1px 1px 4px #000;
+}
+
+#nav .sign-in:hover {
+    background-color: #faa700;
+    text-shadow: 1.5px 1.5px 5px #000;
+    border: white solid 1px;
+    scale: 1.1;
+}
+
+#about,
+#abtText h3,
+#page1,
+#page1 h1,
+#scroller-in,
+.abtImg {
+    position: relative
+}
+
+#nav h4 {
+    text-shadow: 1px 1px 4px #000;
+    font-size: clamp(0.78rem, 0.95vw, 0.95rem);
+    font-weight: 600;
+    transition: .2s linear;
+    white-space: nowrap;
+}
+
+#nav h4:hover {
+    color: var(--hov);
+    font-weight: 600;
+    text-shadow: 2px 2px 6px #000;
+}
+
+#page1 {
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about,
+#cards-container {
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+#page1 h1 {
+    font-size: 7rem;
+    transition: .3s linear;
+}
+
+#page1 h1::before {
+    z-index: -1;
+    position: absolute;
+    content: "LEARN. PLAY. WIN.";
+    color: #000;
+    left: -.3rem;
+    top: .3rem;
+    -webkit-text-stroke: 0.1rem #faa700;
+}
+
+#page1 h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: .8rem;
+    text-shadow: .1rem .2rem #000
+}
+
+#page1 p {
+    color: wheat;
+    font-size: 2.5vh;
+    font-weight: 400;
+    text-shadow: .1rem .1rem #000
+}
+
+#page2 {
+    z-index: 1;
+    min-height: 100vh
+}
+
+#scroller {
+    overflow-x: auto;
+    overflow-y: hidden
+}
+
+#scroller::-webkit-scrollbar {
+    display: none
+}
+
+#scroller-in {
+    display: inline-block;
+    animation-name: scroll;
+    animation-duration: 35s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 3
+}
+
+#scroller-in h4 {
+    display: inline-block;
+}
+
+#scroller-in h4 a{
+    cursor: pointer;
+    font-size: 7.5rem;
+    margin-right: 2vw;
+    font-weight: 900;
+    color: black;
+    transition: all linear .5s;
+    -webkit-text-stroke: 0.125rem white;
+}
+
+#scroller-in h4 a:hover {
+    color: var(--acc);
+    -webkit-text-stroke: 0.125rem #faa700;
+    font-size: 7.8rem;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0)
+    }
+
+    to {
+        transform: translateX(-100%)
+    }
+}
+
+#about {
+    margin-top: 7vh;
+    height: 40vh;
+    padding: 0 3rem;
+    justify-content: space-around
+}
+
+#abtText {
+    width: 50%
+}
+
+#abtText h3 {
+    font-size: 3.375rem;
+    font-weight: 800;
+    margin-bottom: 1.875rem;
+    color: wheat;
+    transition: .2s ease-out
+}
+
+#abtText p {
+    font-size: 1.25rem;
+    line-height: 1.625rem
+}
+
+.abtImg {
+    background-image: url(./src/img/cricketGround.jpg);
+    height: 12.5rem;
+    width: 13.75rem;
+    border-radius: 10%;
+    box-shadow: -.25rem .25rem #feb92f
+}
+
+#abtImg1:hover {
+    box-shadow: -.5rem .5rem #feb92f
+}
+
+#abtImg2 {
+    box-shadow: .25rem .25rem #feb92f;
+    background-image: url(./src/img/shot.png)
+}
+
+#abtImg2:hover {
+    box-shadow: .5rem .5rem #feb92f
+}
+
+#cards-container {
+    height: 60vh;
+    justify-content: center;
+    gap: 4.375rem;
+    position: relative
+}
+
+#page3,
+#signUpDiv {
+    align-items: center;
+    display: flex;
+    position: relative
+}
+
+.card {
+    height: 80%;
+    width: 24%;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: .6s
+}
+
+.imgLeft,
+.overlay {
+    height: 100%;
+    opacity: 0
+}
+
+#footer,
+#page3,
+#page4,
+#signUpDiv,
+.overlay {
+    width: 100%
+}
+
+#card1 {
+    background-image: url(./src/img/learnCricket.webp)
+}
+
+#card2 {
+    background-image: url(./src/img/netPractice.webp)
+}
+
+#card3 {
+    background-image: url(./src/img/cricShot.jpg)
+}
+
+.overlay {
+    background-color: #feb92f;
+    padding: 5vh;
+    transition: .7s
+}
+
+.overlay h4 {
+    color: #000;
+    font-size: 1.5625rem;
+    margin-bottom: 1.25rem;
+    font-weight: 800;
+    text-shadow: .125rem .125rem .0625rem #fff
+}
+
+.overlay p {
+    margin-top: 5vh;
+    color: #000;
+    font-size: 2.7vh;
+    text-shadow: .0625rem .0625rem .0625rem #fff
+}
+
+.card:hover .overlay {
+    opacity: 1
+}
+
+.card:hover {
+    height: 82%;
+    width: 26%;
+    border-radius: 1.375rem
+}
+
+#signUpDiv {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    height: 37vh;
+    padding: .625rem;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, #feb92f, #ff8c00)
+}
+
+#signUpDiv h4 {
+    z-index: 4;
+    line-height: 3.125rem;
+    color: #fff;
+    text-shadow: .125rem .125rem .0625rem #000;
+    font-weight: 800;
+    font-size: 1.6875rem
+}
+
+#signUpDiv h4:hover {
+    font-size: 1.75rem;
+    text-shadow: .1875rem .1875rem .0625rem #000
+}
+
+.imgLeft {
+    transform: translateX(-100%)
+}
+
+.imgRight {
+    height: 90%;
+    opacity: 0;
+    transform: translateX(100%)
+}
+
+#page3 {
+    height: 100vh;
+    background-color: #000;
+    justify-content: center
+}
+
+#page3>p {
+    font-size: 2.1875rem;
+    font-weight: 700;
+    width: 60%;
+    line-height: 2.5rem
+}
+
+#page3 img {
+    position: absolute;
+    height: 3.75rem
+}
+
+#page3 #colon1 {
+    left: 8%;
+    top: 18%
+}
+
+#page3 #colon2 {
+    bottom: 18%;
+    right: 8%
+}
+
+#page4 {
+    min-height: 30vh;
+    gap: 4.375rem;
+    position: relative
+}
+
+#page4 h1 {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 14.375rem;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #000;
+    -webkit-text-stroke: 0.125rem whitesmoke
+}
+
+#f2 h3,
+#f3 h3 {
+    font-size: 1.6vw;
+    color: #fff;
+    text-shadow: .125rem .125rem #000
+}
+
+#page4 h1:hover {
+    font-size: 4.6rem;
+    color: #faa700;
+    -webkit-text-stroke: 0.125rem #faa700
+}
+
+#footer {
+    height: 40vh;
+    background-color: #ff8c00;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6.5vw;
+    padding: 0 6.25rem;
+}
+
+#footer>img {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+}
+
+#f1 img {
+    height: 8.125rem;
+}
+
+#f1,
+#f2,
+#f3,
+#f4 {
+    /* width: fit-content; */
+    position: relative;
+    z-index: 99;
+}
+
+#f2 h3 {
+    font-weight: 900;
+    margin-bottom: .5rem;
+}
+
+#f3 h3,
+#f4 h4 {
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: .5rem;
+}
+
+#f4 h4 {
+    font-size: 1.2vw;
+    color: wheat;
+    line-height: 1.5rem;
+    padding-left: 30vh;
+}
+
+span {
+    text-shadow: .125rem .125rem #000
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360° Virtual Tour & Live Ground Cam | THE 22 YARDS</title>
+    <link rel="shortcut icon" href="./src/img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="virtual-tour.css">
+</head>
+
+<body>
+    <!-- Shared Navigation Bar -->
+    <div id="nav">
+        <div class="nav-left">
+            <a href="index.html">
+                <img class="logo-img" src="./src/img/logo.png" alt="Maharaja Cricket Club Logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <h4><a href="index.html">HOME</a></h4>
+            <h4><a href="join.html">MEMBERSHIP</a></h4>
+            <h4><a href="booking.html">BOOKING</a></h4>
+            <h4><a href="tutorials.html">TUTORIALS</a></h4>
+            <h4><a href="virtual-tour.html" class="active">VIRTUAL TOUR</a></h4>
+            <h4><a href="rewards.html">REWARDS</a></h4>
+        </div>
+        <div class="nav-actions">
+            <h4 class="sign-in"><a href="sign.html">SIGN IN</a></h4>
+        </div>
+    </div>
+
+    <!-- Page Content Container -->
+    <main class="tour-container">
+        <!-- Hero Header -->
+        <header class="tour-hero">
+            <div class="tag-badge">🌐 Immersive Club Experience</div>
+            <h1>360° VIRTUAL TOUR & <br><span class="highlight">LIVE GROUND CAM</span></h1>
+            <p>Explore our international-grade turf wickets, high-performance practice facilities, and tune in to live training action directly from the stadium.</p>
+        </header>
+
+        <!-- PART 1: 360° PANORAMIC TOUR -->
+        <section class="tour-card">
+            <div class="tour-card-header">
+                <h2><span>🧭</span> 360° Panoramic <span class="highlight" style="color: var(--acc);">Ground Tour</span></h2>
+                <div class="scene-selector">
+                    <button class="btn-scene active" data-scene="pitch">🏟️ Center Pitch & Pavilion</button>
+                    <button class="btn-scene" data-scene="nets">⚡ Practice Turf Nets</button>
+                    <button class="btn-scene" data-scene="club">🏢 Club House & Gym</button>
+                </div>
+            </div>
+
+            <div class="panorama-viewport" id="panoramaViewport">
+                <div class="viewer-hint">
+                    <span>👆</span>
+                    <span>Click & drag (or swipe) to look around 360°</span>
+                </div>
+
+                <div class="compass-badge" id="compassHeading">
+                    🧭 North (0°)
+                </div>
+
+                <canvas id="panoramaCanvas" class="panorama-canvas"></canvas>
+
+                <div class="viewer-controls">
+                    <button class="ctrl-btn" id="btnZoomIn" title="Zoom In">➕</button>
+                    <button class="ctrl-btn" id="btnZoomOut" title="Zoom Out">➖</button>
+                    <button class="ctrl-btn" id="btnRotate" title="Toggle Auto-Rotate" style="color: #FEB92F;">🔄</button>
+                    <button class="ctrl-btn" id="btnFullscreen" title="Fullscreen">⛶</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PART 2: LIVE NOW GROUND CAM -->
+        <section class="live-stream-section">
+            <div class="live-header">
+                <div class="live-title-box">
+                    <span class="live-indicator">LIVE BROADCAST</span>
+                    <h2 style="font-size: 1.25rem; font-weight: 800;">Pitch & Practice Net Cam</h2>
+                </div>
+
+                <div class="camera-angles">
+                    <button class="btn-cam active" data-cam="cam1">Cam 1: Center Pitch</button>
+                    <button class="btn-cam" data-cam="cam2">Cam 2: Nets Radar</button>
+                    <button class="btn-cam" data-cam="cam3">Cam 3: Pavilion View</button>
+                </div>
+            </div>
+
+            <div class="video-player-frame" id="videoPlayerFrame">
+                <div class="live-watermark" id="watermarkCamName">
+                    🔴 LIVE: PITCH-CAM-01 [CENTER WICKET]
+                </div>
+
+                <!-- Video placeholder feed (ready for WebRTC / HLS streaming URL) -->
+                <!-- TODO: backend - Stream via WebRTC media server or HLS.js video player endpoint -->
+                <video id="liveVideoPlayer" muted loop autoplay playsinline src="./src/backgroundVideo.mp4"></video>
+
+                <div class="live-stats-bar">
+                    <div class="stream-meta-item">
+                        <span>Time: </span><strong id="liveTimestamp">--:--:-- IST</strong>
+                    </div>
+                    <div class="stream-meta-item">
+                        <span>Quality: </span><strong>1080p60 Full HD</strong>
+                    </div>
+                    <div class="stream-meta-item">
+                        <span>Live Viewers: </span><strong style="color: #4ade80;">142 Online</strong>
+                    </div>
+                    <div class="stream-meta-item">
+                        <span>Status: </span><strong style="color: #4ade80;">● Low Latency (1.1s)</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Live Stream Drop-In Tester -->
+            <div class="stream-config-card">
+                <div class="stream-config-header">
+                    <h4>📡 Custom Live Stream Feed Connector</h4>
+                    <p>Enter any YouTube Live or HLS video URL below to test dropping in a live broadcast stream.</p>
+                </div>
+                <div class="stream-input-group">
+                    <input type="url" id="customStreamUrl" placeholder="e.g. https://www.youtube.com/watch?v=live_stream_id or https://example.com/live.m3u8">
+                    <button class="btn-load-stream" id="btnLoadStream">Connect Feed</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="shared-footer">
+        <div class="footer-inner">
+            <div class="footer-col brand-col">
+                <img src="./src/img/logo.png" alt="Logo" class="footer-logo">
+                <p>THE 22 YARDS — Premier Cricket Facility in Jaipur, Rajasthan. Passionate about technology, player development, and making cricket fun and accessible to everyone.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="join.html">Membership</a></li>
+                    <li><a href="booking.html">Ground & Coach Booking</a></li>
+                    <li><a href="tutorials.html">Video Tutorials</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="virtual-tour.html">360° Virtual Tour</a></li>
+                    <li><a href="rewards.html">Loyalty Rewards</a></li>
+                    <li><a href="registration.html">Join Club Now</a></li>
+                    <li><a href="sign.html">Member Sign In</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Club</h4>
+                <p>Rambagh Palace Grounds,<br>Bhawani Singh Road, C-Scheme,<br>Jaipur, Rajasthan 302005, India</p>
+                <p style="margin-top: 0.5rem; color: #FEB92F;">TEL: 0208 309 0181</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 THE 22 YARDS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="./virtual-tour.js"></script>
+</body>
+
+</html>

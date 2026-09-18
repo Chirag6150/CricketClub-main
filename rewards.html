@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rewards & Loyalty Points | THE 22 YARDS</title>
+    <link rel="shortcut icon" href="./src/img/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="rewards.css">
+</head>
+
+<body>
+    <!-- Background Video & Overlay -->
+    <video class="bg-video" muted loop autoplay playsinline src="./src/backgroundVideo.mp4"></video>
+    <div class="bg-overlay"></div>
+
+    <!-- Shared Navigation Bar -->
+    <div id="nav">
+        <div class="nav-left">
+            <a href="index.html">
+                <img class="logo-img" src="./src/img/logo.png" alt="Maharaja Cricket Club Logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <h4><a href="index.html">HOME</a></h4>
+            <h4><a href="join.html">MEMBERSHIP</a></h4>
+            <h4><a href="booking.html">BOOKING</a></h4>
+            <h4><a href="tutorials.html">TUTORIALS</a></h4>
+            <h4><a href="virtual-tour.html">VIRTUAL TOUR</a></h4>
+            <h4><a href="rewards.html" class="active">REWARDS</a></h4>
+        </div>
+        <div class="nav-actions">
+            <h4 class="sign-in"><a href="sign.html">SIGN IN</a></h4>
+        </div>
+    </div>
+
+    <!-- Page Content Container -->
+    <main class="rewards-container">
+        <!-- Hero Header -->
+        <header class="rewards-hero">
+            <div class="tag-badge">⭐ MCC Cricketer Loyalty Program</div>
+            <h1>MY REWARDS & <br><span class="highlight">BONUS POINTS</span></h1>
+            <p>Earn 10 points on every session or practice net booked. Redeem points for exclusive membership discounts, merchandise, and coaching masterclasses.</p>
+        </header>
+
+        <!-- Balance & Tier Card -->
+        <section class="balance-card">
+            <div class="balance-top-row">
+                <div class="points-display">
+                    <span class="pts-number" id="pointsNumber">50</span>
+                    <span class="pts-label">Bonus Points Balance</span>
+                </div>
+
+                <div class="tier-badge">
+                    <span class="tier-icon" id="tierIcon">🥉</span>
+                    <div>
+                        <span class="tier-name" id="tierName">Club Member</span>
+                        <span class="tier-sub" id="tierSub">Standard Practice Access</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-header">
+                    <span>Reward Threshold Progress</span>
+                    <span id="progressStatus">50 / 100 Points</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressFill" style="width: 50%;"></div>
+                </div>
+            </div>
+
+            <div class="balance-actions">
+                <p id="pointsNeeded">50 more points until next reward unlock (100 pts threshold)</p>
+                <button class="btn-demo-pts" onclick="addDemoPoints()">⚡ Quick Test: +50 Demo Points</button>
+            </div>
+        </section>
+
+        <!-- Reward Catalog -->
+        <section>
+            <h2 class="section-title"><span>🎁</span> Available <span class="highlight">Rewards to Redeem</span></h2>
+            <div class="rewards-grid" id="rewardsGrid">
+                <!-- Rendered dynamically by rewards.js -->
+            </div>
+        </section>
+
+        <!-- Points Transaction History -->
+        <section class="history-section">
+            <h2 class="section-title"><span>📜</span> Points <span class="highlight">Activity History</span></h2>
+            <div class="history-table-wrapper">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Activity Description</th>
+                            <th>Points</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTableBody">
+                        <!-- Rendered dynamically by rewards.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="shared-footer">
+        <div class="footer-inner">
+            <div class="footer-col brand-col">
+                <img src="./src/img/logo.png" alt="Logo" class="footer-logo">
+                <p>THE 22 YARDS — Premier Cricket Facility in Jaipur, Rajasthan. Passionate about technology, player development, and making cricket fun and accessible to everyone.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="join.html">Membership</a></li>
+                    <li><a href="booking.html">Ground & Coach Booking</a></li>
+                    <li><a href="tutorials.html">Video Tutorials</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="virtual-tour.html">360° Virtual Tour</a></li>
+                    <li><a href="rewards.html">Loyalty Rewards</a></li>
+                    <li><a href="registration.html">Join Club Now</a></li>
+                    <li><a href="sign.html">Member Sign In</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Club</h4>
+                <p>Rambagh Palace Grounds,<br>Bhawani Singh Road, C-Scheme,<br>Jaipur, Rajasthan 302005, India</p>
+                <p style="margin-top: 0.5rem; color: #FEB92F;">TEL: 0208 309 0181</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 THE 22 YARDS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Redemption Success Modal -->
+    <div class="redeem-modal-backdrop" id="redeemModal">
+        <div class="redeem-modal-card" id="redeemModalContainer">
+            <!-- Injected dynamically on redemption -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="./rewards.js"></script>
+</body>
+
+</html>
