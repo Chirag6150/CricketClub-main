@@ -1,5 +1,5 @@
 /**
- * MAHARAJA CRICKET CLUB - TUTORIALS ENGINE (tutorials.js)
+ * THE 22 YARDS - TUTORIALS ENGINE (tutorials.js)
  * High-performance video tutorial catalog with multi-factor filtering,
  * card expansion modal, and responsive search.
  */
