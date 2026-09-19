@@ -1,5 +1,5 @@
 /**
- * MAHARAJA CRICKET CLUB - VIRTUAL TOUR & LIVE CAM (virtual-tour.js)
+ * THE 22 YARDS - VIRTUAL TOUR & LIVE CAM (virtual-tour.js)
  * Implements interactive 360° panoramic canvas navigation, scene transitions,
  * camera angle switching, and mock live stream player.
  */
