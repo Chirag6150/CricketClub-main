@@ -1,5 +1,5 @@
 /**
- * MAHARAJA CRICKET CLUB - 3-DAY FREE TRIAL SYSTEM (trial.js)
+ * THE 22 YARDS - 3-DAY FREE TRIAL SYSTEM (trial.js)
  * Manages trial registration, duplicate email prevention, countdown tracking,
  * and dynamic banner notification across pages.
  */
