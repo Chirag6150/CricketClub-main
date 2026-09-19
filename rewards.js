@@ -1,5 +1,5 @@
 /**
- * MAHARAJA CRICKET CLUB - REWARDS & LOYALTY SYSTEM (rewards.js)
+ * THE 22 YARDS - REWARDS & LOYALTY SYSTEM (rewards.js)
  * Manages points balance, tier classification, threshold progress,
  * reward redemption, and transaction history.
  */
