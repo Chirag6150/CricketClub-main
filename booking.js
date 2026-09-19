@@ -1,5 +1,5 @@
 /**
- * MAHARAJA CRICKET CLUB - BOOKING LOGIC (booking.js)
+ * THE 22 YARDS - BOOKING LOGIC (booking.js)
  * Handles playground & coach reservation, double-booking validation,
  * localStorage persistence, bonus points integration, and My Bookings.
  */
